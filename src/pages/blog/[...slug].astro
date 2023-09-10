@@ -19,16 +19,16 @@ const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
-    <article class='mx-auto prose prose-stone prose-xl dark:prose-invert'>
-        <FormattedDate date={post.data.pubDate} />
+    <article class='mx-auto prose md:prose-xl prose-sm dark:prose-invert'>
+        <h1>{post.data.title}</h1>
+        <small class='italic'><FormattedDate date={post.data.pubDate} /></small>
         {
             post.data.updatedDate && (
-                <div class='last-updated-on'>
-                    Last updated on <FormattedDate date={post.data.updatedDate} />
-                </div>
+                <small class='italic'>
+                    . Updated on <FormattedDate date={post.data.updatedDate} />
+                </small>
             )
         }
-        <h1>{post.data.title}</h1>
         <Content />
     </article>
 </Layout>
