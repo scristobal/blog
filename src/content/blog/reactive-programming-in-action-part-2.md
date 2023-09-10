@@ -1,8 +1,8 @@
 ---
 title:  Reactive programming in action - part 2
 description: An further example of reactive programing, using Kafka, Socket.IO and TypeScript
-pubDate: 01-01-2020
-updatedDate: 01-01-2020
+pubDate: Jul 22, 2022
+updatedDate: Jul 22, 2022
 
 tags: RxJS, typescript, kafka, socketio, nodejs
 license: public-domain
