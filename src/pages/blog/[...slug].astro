@@ -21,14 +21,10 @@ const { Content } = await post.render();
 <Layout title={post.data.title} description={post.data.description}>
     <article class='mx-auto prose md:prose-xl prose-sm dark:prose-invert'>
         <h1>{post.data.title}</h1>
-        <small class='italic'><FormattedDate date={post.data.pubDate} /></small>
-        {
-            post.data.updatedDate && (
-                <small class='italic'>
-                    . Updated on <FormattedDate date={post.data.updatedDate} />
-                </small>
-            )
-        }
+        <span
+            class='hidden md:inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-900 mx-2 my-1 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400'>
+            <FormattedDate date={post.data.pubDate} />
+        </span>
         <Content />
     </article>
 </Layout>
