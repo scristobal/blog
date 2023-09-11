@@ -1,5 +1,6 @@
 ---
 import '../styles/base.css';
+import { ViewTransitions } from 'astro:transitions';
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
@@ -60,6 +61,7 @@ const defaultImage = '/portrait.apng';
             property='twitter:image'
             content={new URL(Astro.props.image ?? defaultImage, Astro.url)}
         />
+        <ViewTransitions />
     </head>
     <body class='bg-white dark:bg-black'>
         <main class='m-12 min-w-[200px]'>
