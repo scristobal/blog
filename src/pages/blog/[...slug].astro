@@ -27,24 +27,8 @@ const { Content } = await post.render();
         </span>
         <Content />
         <section class='flex justify-between'>
-            <button id='back' class='underline'>← Back</button>
-            <button id='top' class='underline'>Top ↑</button>
+            <a href="/" class='underline'>← Index</a>
+            <a href="#" class='underline'>Top ↑</a>
         </section>
     </article>
 </Layout>
-
-<script>
-    document.addEventListener('astro:page-load', () => {
-        const backButton = document.getElementById('back');
-
-        backButton?.addEventListener('click', () => {
-            history.back();
-        });
-
-        const topButton = document.getElementById('top');
-
-        topButton?.addEventListener('click', () => {
-            window.scrollTo(0, 0);
-        });
-    });
-</script>
