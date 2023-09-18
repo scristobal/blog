@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Base.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import type { InferGetStaticPropsType } from 'astro';
+import '../../styles/anchor-headers.css';
 
 export async function getStaticPaths() {
     const posts = await getCollection('blog');
@@ -20,15 +21,17 @@ const { Content } = await post.render();
 
 <Layout title={post.data.title} description={post.data.description}>
     <article class='mx-auto prose md:prose-xl prose-sm dark:prose-invert'>
-        <h1>{post.data.title}</h1>
-        <span
-            class='hidden md:inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-900 mx-2 my-1 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400'>
-            <FormattedDate date={post.data.pubDate} />
-        </span>
-        <Content />
-        <section class='flex justify-between'>
+        <section>
+            <h1>{post.data.title}</h1>
+            <span
+                class='hidden md:inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-900 mx-2 my-1 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400'>
+                <FormattedDate date={post.data.pubDate} />
+            </span>
+            <Content />
+        </section>
+        <nav class='flex justify-between'>
             <a href='/' class='underline'>&larr; Index</a>
             <a href='#' class='underline'>Top &uarr;</a>
-        </section>
+        </nav>
     </article>
 </Layout>
