@@ -5,6 +5,7 @@ import { s } from 'hastscript';
 import tailwind from '@astrojs/tailwind';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { rehypeHeadingIds } from '@astrojs/markdown-remark';
+import { SITE_URL } from './src/consts';
 
 const AnchorLinkIcon = s(
     'svg',
@@ -24,7 +25,7 @@ const AnchorLinkIcon = s(
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://example.com',
+    site: SITE_URL,
     integrations: [mdx(), sitemap(), tailwind()],
     markdown: {
         rehypePlugins: [
