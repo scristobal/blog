@@ -26,7 +26,7 @@ const AnchorLinkIcon = s(
 // https://astro.build/config
 export default defineConfig({
     site: SITE_URL,
-    integrations: [mdx(), sitemap(), tailwind()],
+    integrations: [mdx(), sitemap(), tailwind(), sitemap()],
     markdown: {
         rehypePlugins: [
             rehypeHeadingIds,
