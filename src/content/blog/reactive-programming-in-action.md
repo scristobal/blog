@@ -17,7 +17,7 @@ Instead of covering the basics, there are much better resources out there, the f
 
 The _Funnel_ component sits between the [Kafka](https://kafka.apache.org/) topics and the [SPA](https://developer.mozilla.org/en-US/docs/Glossary/SPA) clients. It coordinates client connections and transforms a Kafka input stream into a web-socket connection (Socket.IO) adapted to each client status and preferences.
 
-Kafka topics -> Funnel -> clients
+Kafka &rightarrow; Funnel &rightarrow; clients
 
 _Funnel_ is written in [TypeScript](https://www.typescriptlang.org/) and translated to [Node](https://nodejs.org/en/), although currently being migrated to [Go](https://go.dev/). This post focus on Node implementation, but I might cover the rationale and migration to Go in a future post.
 

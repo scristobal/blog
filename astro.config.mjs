@@ -35,5 +35,8 @@ export default defineConfig({
             rehypeHeadingIds,
             [rehypeAutolinkHeadings, { content: AnchorLinkIcon, behavior: 'append' }],
         ],
+        shikiConfig: {
+            // wrap: true,
+        },
     },
 });

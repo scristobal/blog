@@ -10,7 +10,7 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-    <section class='prose md:prose-xl prose-sm dark:prose-invert mx-auto'>
+    <section class='prose dark:prose-invert max-w-4xl mx-auto'>
         <h2>Blog</h2>
         <ul>
             {
