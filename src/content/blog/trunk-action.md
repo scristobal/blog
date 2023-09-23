@@ -1,12 +1,11 @@
 ---
-title: A GitHub action to deploy Web Assembly applications in Trunk
-description: No need to deploy from a branch on a separate workflow
-pubDate: 09-11-2023
+title: The simplest GitHub action to deploy Trunk applications
+description: No need to deploy from a branch on a separate workflow.
+publication: 09-11-2023
 ---
+## Introduction
 
-## Intro
-
-Lately I have been playing around with Web Assembly and Rust, but haven't found a way to easily build and share my projects. That's until now.
+Lately, I have been playing around with Web Assembly and Rust, but haven't found a way to easily build and share my projects. That's until now.
 
 ### Config
 
@@ -15,7 +14,7 @@ Go to your repo &rightarrow; Settings &rightarrow; Pages &rightarrow; Build and 
 Then create a file under `.github/workflows/trunk-deploy.yml`
 
 ```yaml
-name: Build and deploy with Trunk
+name: Build and deploy to gh pages with Trunk
 
 on:
   push:
@@ -30,20 +29,17 @@ jobs:
         with:
           toolchain: stable
           target: wasm32-unknown-unknown
-
       - uses: jetli/trunk-action@v0.1.0
       - uses: jetli/wasm-bindgen-action@v0.1.0
-
       - uses: actions/checkout@v2
-
       - run: trunk build --release
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
+      - uses: actions/upload-pages-artifact@v2
         with:
           path: dist
 
   deploy:
+    runs-on: ubuntu-latest
+
     needs: build
 
     permissions:
@@ -54,11 +50,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
+      - uses: actions/deploy-pages@v2
         id: deployment
-        uses: actions/deploy-pages@v2
 ```
 
 That's it, the project will be build and deployed with every push to `main`
