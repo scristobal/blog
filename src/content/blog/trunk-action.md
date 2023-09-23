@@ -57,6 +57,6 @@ jobs:
 
 That's it, the project will be build and deployed with every push to `main`
 
-### Trouble shooting
+### Troubleshooting
 
 By default pages are under `<github-user>.github.io/<repo-name>` that means your assets will fail to load due to relative urls. One option is to [specify a base URL](https://vitejs.dev/config/shared-options.html#base). Alternatively, you can [configure a custom domain on GitHub](https://docs.github.com/articles/using-a-custom-domain-with-github-pages/).
