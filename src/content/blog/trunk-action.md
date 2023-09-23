@@ -1,7 +1,7 @@
 ---
 title: The simplest GitHub action to deploy Trunk applications
 description: No need to deploy from a branch on a separate workflow.
-publication: 09-11-2023
+publication: 09-23-2023
 ---
 ## Introduction
 
