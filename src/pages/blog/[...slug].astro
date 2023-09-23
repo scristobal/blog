@@ -4,6 +4,7 @@ import Layout from '../../layouts/Base.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import type { InferGetStaticPropsType } from 'astro';
 import '../../styles/anchor-headers.css';
+import '../../styles/astro-code.css';
 
 export async function getStaticPaths() {
     const posts = await getCollection('blog');
@@ -29,7 +30,7 @@ const { Content } = await post.render();
     margin-right: -50vw;
   } -->
 <Layout title={post.data.title} description={post.data.description}>
-    <article class='max-w-4xl mx-auto prose dark:prose-invert'>
+    <article class='mx-auto prose dark:prose-invert'>
         <section>
             <h1>{post.data.title}</h1>
             <span
