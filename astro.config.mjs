@@ -7,6 +7,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { rehypeHeadingIds } from '@astrojs/markdown-remark';
 import { SITE_URL } from './src/consts';
 import prefetch from '@astrojs/prefetch';
+import remarkToc from 'remark-toc';
 
 const AnchorLinkIcon = s(
     'svg',
@@ -29,6 +30,7 @@ export default defineConfig({
     site: SITE_URL,
     integrations: [mdx(), sitemap(), prefetch({ throttle: 3 }), tailwind()],
     markdown: {
+        remarkPlugins: [remarkToc],
         rehypePlugins: [
             rehypeHeadingIds,
             [rehypeAutolinkHeadings, { content: AnchorLinkIcon, behavior: 'append' }],

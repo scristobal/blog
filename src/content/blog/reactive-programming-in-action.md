@@ -11,6 +11,8 @@ Instead of covering the basics, there are much better resources out there, the f
 
 > Code snippets have been adapted to this blog post specifically, it is not a 1:1 copy of production code and some implementation details have been hidden.
 
+#### Contents
+
 ## Context
 
 The _Funnel_ component sits between the [Kafka](https://kafka.apache.org/) topics and the [SPA](https://developer.mozilla.org/en-US/docs/Glossary/SPA) clients. It coordinates client connections and transforms a Kafka input stream into a web-socket connection (Socket.IO) adapted to each client status and preferences.
