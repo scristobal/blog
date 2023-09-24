@@ -4,7 +4,7 @@ import Layout from '../../layouts/Base.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import type { InferGetStaticPropsType } from 'astro';
 import '../../styles/anchor-headers.css';
-import '../../styles/astro-code.css';
+// import '../../styles/astro-code.css';
 
 export async function getStaticPaths() {
     const posts = await getCollection('blog');
@@ -31,7 +31,7 @@ const { Content } = await post.render();
   } -->
 <Layout title={post.data.title} description={post.data.description}>
     <article class='mx-auto prose dark:prose-invert relative'>
-        <nav class='p-1 sticky top-0 -translate-x-12 translate-y-10 flex flex-col items-start'>
+        <nav class='p-2 sticky top-0 -translate-x-12 translate-y-10 flex flex-col items-start'>
             <a href='/'
                 ><svg
                     class='stroke-black hover:stroke-gray-600 dark:stroke-white hover:dark:stroke-gray-400'
