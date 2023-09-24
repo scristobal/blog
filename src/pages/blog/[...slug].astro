@@ -31,7 +31,7 @@ const { Content } = await post.render();
   } -->
 <Layout title={post.data.title} description={post.data.description}>
     <article class='mx-auto prose dark:prose-invert relative'>
-        <nav class='p-1 sticky top-8 -mx-12 -my-11 flex flex-col items-start'>
+        <nav class='p-1 sticky top-0 -translate-x-12 translate-y-10 flex flex-col items-start'>
             <a href='/'
                 ><svg
                     class='stroke-black hover:stroke-gray-600 dark:stroke-white hover:dark:stroke-gray-400'
@@ -77,7 +77,7 @@ const { Content } = await post.render();
                 ></a
             >
         </nav>
-        <section>
+        <section class='-translate-y-10'>
             <h1>{post.data.title}</h1>
             <span
                 class='hidden md:inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-900 mx-2 my-1 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400'>
