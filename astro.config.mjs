@@ -39,4 +39,7 @@ export default defineConfig({
             // wrap: true,
         },
     },
+    vite: {
+        server: { open: true },
+    },
 });
