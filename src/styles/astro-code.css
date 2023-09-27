@@ -1,7 +1,0 @@
-.astro-code {
-    --extra-width: 1rem;
-    padding-left: var(--extra-width);
-    margin-left: calc(var(--extra-width) * -1);
-    padding-right: var(--extra-width);
-    margin-right: calc(var(--extra-width) * -1);
-}
