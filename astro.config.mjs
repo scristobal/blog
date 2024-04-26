@@ -6,7 +6,6 @@ import tailwind from '@astrojs/tailwind';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { rehypeHeadingIds } from '@astrojs/markdown-remark';
 import { SITE_URL } from './src/consts';
-import prefetch from '@astrojs/prefetch';
 import remarkToc from 'remark-toc';
 
 const AnchorLinkIcon = s(
@@ -28,7 +27,8 @@ const AnchorLinkIcon = s(
 // https://astro.build/config
 export default defineConfig({
     site: SITE_URL,
-    integrations: [mdx(), sitemap(), prefetch({ throttle: 3 }), tailwind()],
+    integrations: [mdx(), sitemap(), tailwind()],
+    prefetch: true,
     markdown: {
         remarkPlugins: [remarkToc],
         rehypePlugins: [
