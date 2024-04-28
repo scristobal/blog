@@ -1,9 +1,12 @@
 ---
-title: Easy way to adap
-description: No need to deploy from a branch on a separate workflow.
-publication: 09-24-2023
+title: Easy way to adapt a favicon to the user theme
+description: Create a favicon that changes when user preferences do.
+publication: 28-04-2024
 ---
 
+The idea is pretty simple, combine svg with CSS media queries.
+
+Set the `path.stroke` to black by default, and when the media query for `prefers-color-scheme` is `dark` then set stroke to white. For example:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -15,4 +18,19 @@ publication: 09-24-2023
         path { stroke: #FFF; }
     }
     </style>
-</svg>```
+</svg>
+```
+
+The important bit is between the `<style>` tags, you might also want to change the `fill` property, depending on your icon.
+
+Finally, drop it into your headers with
+
+```html
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+```
+
+And don't forget to add a old time ico to support older browsers.
+
+```html
+<link rel="icon" href="/favicon.ico" size="any">
+```
