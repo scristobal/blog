@@ -1,7 +1,7 @@
 ---
 title: Easy way to adapt a favicon to the user theme
 description: Create a favicon that changes when user preferences do.
-publication: 28-04-2024
+publication: 04-28-2024
 ---
 
 The idea is pretty simple, combine svg with CSS media queries.
