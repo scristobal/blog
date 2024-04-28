@@ -1,10 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Base.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
+import Layout from '~/layouts/Base.astro';
+
+import FormattedDate from '~/components/FormattedDate.astro';
 import type { InferGetStaticPropsType } from 'astro';
-import '../../styles/anchor-headers.css';
-import Nav from '../../components/Nav.astro';
+import '~/styles/anchor-headers.css';
+import Nav from '~/components/Nav.astro';
 
 export async function getStaticPaths() {
     const posts = await getCollection('blog');
