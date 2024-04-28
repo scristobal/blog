@@ -67,20 +67,23 @@ function progress({loaded, total}) {
 }
 ```
 
-source:https://blog.logrocket.com/axios-vs-fetch-best-http-requests/#download-progress
+source:<https://blog.logrocket.com/axios-vs-fetch-best-http-requests/#download-progress>
 
 ```typescript
 let fileSize = ”; // you can get fileSize in input[type=file] onchange event
 let uploadedByte = 0;
+
 fetch().then(res => {
-let reader = res.body.getReader();
-reader.read().then(({ done, value }) => {
-if (done) {
-console.log(‘upload completed’);
-}
-uploadedByte += value.byteLength;
-console.log(‘uploaded: ‘ + uploadedByte);
-console.log(‘progress: (uploadedByte/fileSize * 100).toFixed());
-});
+  let reader = res.body.getReader();
+
+  reader.read().then(({ done, value }) => {
+
+    if (done) console.log(‘upload completed’);
+
+    uploadedByte += value.byteLength;
+
+    console.log(‘uploaded: ‘ + uploadedByte);
+    console.log(‘progress: (uploadedByte/fileSize * 100).toFixed());
+  });
 })
 ```
