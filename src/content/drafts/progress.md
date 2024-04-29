@@ -1,3 +1,10 @@
+---
+title: Build a progress bar using browser native APIs only.
+publication:
+reference: https://blog.logrocket.com/axios-vs-fetch-best-http-requests/#download-progress
+---
+
+
 ```typescript
 
 index.html
@@ -8,7 +15,7 @@ index.html
 script.js
 'use strict'
 const element = document.getElementById('progress');
-fetch('https://fetch-progress.anthum.com/30kbps/images/sunrise-baseline.jpg')
+fetch('https://example.com/very-large-file')
   .then(response => {
     if (!response.ok) {
       throw Error(response.status+' '+response.statusText)
@@ -66,8 +73,6 @@ function progress({loaded, total}) {
   element.innerHTML = Math.round(loaded/total*100)+'%';
 }
 ```
-
-source:<https://blog.logrocket.com/axios-vs-fetch-best-http-requests/#download-progress>
 
 ```typescript
 let fileSize = ”; // you can get fileSize in input[type=file] onchange event

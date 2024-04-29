@@ -1,9 +1,10 @@
 ---
 title: How to ensure your `asserts` are asserted on async tests using static atomics in Rust
-description: A few notes on how to tests concurrent code in Rust
-publication: 12-29-2023
+publication:
+reference: https://github.com/scristobal/udp-tcp-spmc/blob/main/src/test.rs
 ---
-## Introduction
+
+While reading <https://marabos.nl/atomics/>...
 
 assert the number of assertions using static atomic counters, maybe use a `counted_assert!` and something at the beginning of the function `num_asserts=`
 

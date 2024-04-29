@@ -21,7 +21,7 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Layout title={post.data.title} description={post.data.description}>
+<Layout title={post.data.title}>
     <article class='mx-auto prose dark:prose-invert'>
         <Nav />
         <section>

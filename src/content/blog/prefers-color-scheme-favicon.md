@@ -1,10 +1,10 @@
 ---
-title: Easy way to adapt a favicon to the user theme
-description: Create a favicon that changes when user preferences do.
+title: How to sync favicon with user preferred color scheme
 publication: 04-28-2024
+reference: https://github.com/scristobal/unicorn-website/blob/master/public/favicon.svg?short_path=0680eca
 ---
 
-The idea is pretty simple, combine svg with CSS media queries.
+The idea is pretty simple, combine [SVG style tags](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/style) with [CSS @media prefers-color-scheme query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme).
 
 Set the `path.stroke` to black by default, and when the media query for `prefers-color-scheme` is `dark` then set stroke to white. For example:
 
@@ -37,4 +37,4 @@ And don't forget to add a old time ico to support older browsers.
 
 Using `sizes="any"` makes the browser download only the SVG icon.
 
-For a comprehensive list of favicon compatibility quirks:  [How to Favicon in 2024: Six files that fit most needs](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs)
+[How to Favicon in 2024: Six files that fit most needs](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs)

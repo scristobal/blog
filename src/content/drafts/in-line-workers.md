@@ -1,3 +1,10 @@
+---
+title: How to inline workers for single HTML pages.
+publication:
+reference: https://www.oreilly.com/library/view/web-workers/9781449322120/ch04.html
+---
+
+
 ```html
 <!DOCTYPE html>
 <script id="worker1" type="javascript/worker">

@@ -1,3 +1,9 @@
+---
+title: Make invalid builder pattern states unrepresentable with generic types and traits.
+publication:
+reference: https://github.com/scristobal/wgpu-experiments/blob/main/src/view.rs
+---
+
 
 How to avoid calling `unwrap()` or returning a `Option` on the build pattern. Basically using an intermediate (generic) object and only implementing `finalize` when all the fields are defined.
 

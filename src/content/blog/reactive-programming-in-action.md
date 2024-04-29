@@ -1,9 +1,8 @@
 ---
-title: Reactive programming in action
-description: An example of reactive programing, using Kafka, Socket.IO and TypeScript
+title: A use case for reactive programing
 publication: 07-22-2022
+reference: private
 ---
-## Introduction
 
 This post shows how [reactive programming](https://reactivex.io/) is used in one of [DataBeacon](https://www.databeacon.aero)’s central software component, called _Funnel_. The post is inspired by the [rubber duck debugging method](https://rubberduckdebugging.com/).
 
@@ -11,7 +10,7 @@ Instead of covering the basics, there are much better resources out there, the f
 
 > Code snippets have been adapted to this blog post specifically, it is not a 1:1 copy of production code and some implementation details have been hidden.
 
-#### Contents
+### Contents
 
 ## Context
 
