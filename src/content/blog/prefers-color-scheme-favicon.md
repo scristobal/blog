@@ -32,5 +32,9 @@ Finally, drop it into your headers with
 And don't forget to add a old time ico to support older browsers.
 
 ```html
-<link rel="icon" href="/favicon.ico" size="any">
+<link rel="icon" href="/favicon.ico" sizes="any">
 ```
+
+Using `sizes="any"` makes the browser download only the SVG icon.
+
+For a comprehensive list of favicon compatibility quirks:  [How to Favicon in 2024: Six files that fit most needs](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs)
