@@ -13,11 +13,23 @@ const posts = (await getCollection('blog')).sort(
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
     <section class='mx-auto prose dark:prose-invert'>
         <Nav />
+
+        <p>
+            This is a collection of solutions to problems I encountered and had a non-trivial
+            solution, at least initially. I decided to keep them here so maybe it can save some time
+            to another fellow developer.
+        </p>
+
+        <p>
+            Each post has a brief description, a link to the source and a list of references for
+            digging further into the rabbit hole. Enjoy!
+        </p>
+
         <ul>
             {
                 posts.map((post) => (
                     <li>
-                        <a href={`/blog/${post.slug}/`} rel='prefetch'>
+                        <a class='hover:text-gray-400' href={`/blog/${post.slug}/`} rel='prefetch'>
                             <span>{post.data.title}</span>
                             <span class='hidden md:inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-900 mx-2 my-1 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400'>
                                 <FormattedDate date={post.data.publication} />

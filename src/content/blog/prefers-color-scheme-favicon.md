@@ -37,4 +37,6 @@ And don't forget to add a old time ico to support older browsers.
 
 Using `sizes="any"` makes the browser download only the SVG icon.
 
+#### More
+
 [How to Favicon in 2024: Six files that fit most needs](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs)
