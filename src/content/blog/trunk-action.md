@@ -6,8 +6,6 @@ reference: https://github.com/scristobal/wgpu-experiments/blob/main/.github/work
 
 Lately, I have been playing around with Web Assembly and Rust, but haven't found a way to easily build and share my projects. That's until now.
 
-### Config
-
 Go to your repo &rightarrow; Settings &rightarrow; Pages &rightarrow; Build and deployment &rightarrow; Source and choose `GitHub Actions`
 
 Then create a file under `.github/workflows/trunk-deploy.yml`
@@ -56,6 +54,6 @@ jobs:
 
 That's it, the project will be build and deployed with every push to `main`
 
-### Troubleshooting
+One more thing...
 
 By default pages are under `https://<github-user>.github.io/<repo-name>` that means your assets will fail to load due to relative urls. One option is to [specify a base URL](https://vitejs.dev/config/shared-options.html#base). Alternatively, you can [configure a custom domain on GitHub](https://docs.github.com/articles/using-a-custom-domain-with-github-pages/).
