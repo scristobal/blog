@@ -49,3 +49,5 @@ Promise
     }
   });
 ```
+
+It is important to note that `Promise.race` return the first promise that accepts or rejects.
