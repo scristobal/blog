@@ -12,12 +12,12 @@
     "clean": "rm -rf node_modules .astro dist"
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.1.9",
-    "@astrojs/react": "^3.6.2",
-    "@astrojs/rss": "^4.0.9",
-    "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/tailwind": "^5.1.2",
-    "astro": "^4.16.10",
+    "@astrojs/mdx": "^4.3.10",
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/rss": "^4.0.13",
+    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.15.4",
     "hastscript": "^9.0.0",
     "rehype-autolink-headings": "^7.1.0",
     "remark-toc": "^9.0.0",
