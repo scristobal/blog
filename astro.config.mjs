@@ -2,11 +2,11 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { s } from 'hastscript';
-import tailwind from '@astrojs/tailwind';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { rehypeHeadingIds } from '@astrojs/markdown-remark';
 import { SITE_URL } from './src/consts';
 import remarkToc from 'remark-toc';
+import tailwindcss from '@tailwindcss/vite';
 
 const AnchorLinkIcon = s(
     'svg',
@@ -27,7 +27,7 @@ const AnchorLinkIcon = s(
 // https://astro.build/config
 export default defineConfig({
     site: SITE_URL,
-    integrations: [mdx(), sitemap(), tailwind()],
+    integrations: [mdx(), sitemap()],
     prefetch: true,
     markdown: {
         remarkPlugins: [remarkToc],
@@ -40,6 +40,7 @@ export default defineConfig({
         },
     },
     vite: {
-        server: { open: true },
+      server: { open: true },
+      plugins: [tailwindcss()],
     },
 });
