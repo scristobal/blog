@@ -1,7 +1,6 @@
 ---
   import { getCollection } from "astro:content";
   import type { InferGetStaticPropsType } from "astro";
-
   import FormattedDate from "~/components/formatted-date.astro";
   import Layout from "~/layouts/base.astro";
   import "~/styles/anchor-headers.css";
@@ -11,17 +10,17 @@
     const posts = await getCollection("blog");
     return posts.map((post) => ({
       params: { slug: post.slug },
-      props: post,
+      props: { post },
     }));
   }
 
   type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-  const { title, publication } = Astro.props.data;
-  const { Content } = await Astro.props.render();
+  const { title, publication } = Astro.props.post.data;
+  const { Content } = await Astro.props.post.render();
 ---
 <Layout title={title}>
-  <article class="mx-auto prose dark:prose-invert">
+  <article class="mx-auto max-w-4xl prose dark:prose-invert">
     <Nav/>
     <section>
       <h1 class="bg-white dark:bg-black py-2">{title}</h1>
