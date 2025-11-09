@@ -1,32 +1,29 @@
 ---
 title: Load ImageData without canvas
 publication: 11-10-2024
-reference: <https://github.com/scristobal/load-imagedata-with-rust-and-web-assembly>
 ---
 
 On the browser to get the image data you need to call `2d` context on a `OffscreenCanvas` like so
 
 ```js
-
 async function getImageDataUsingOfflineCanvas(url) {
+    const response = await fetch(url);
 
- const response = await fetch(url);
+    const blob = await response.blob();
 
- const blob = await response.blob();
+    const bitmap = await createImageBitmap(blob, { colorSpaceConversion: 'none' });
+    const canvas = new OffscreenCanvas(bitmap.width, bitmap.height);
 
- const bitmap = await createImageBitmap(blob, { colorSpaceConversion: 'none' });
- const canvas = new OffscreenCanvas(bitmap.width, bitmap.height);
+    const ctx = canvas.getContext('2d');
 
- const ctx = canvas.getContext('2d');
+    ctx?.drawImage(bitmap, 0, 0);
 
- ctx?.drawImage(bitmap, 0, 0);
+    // bitmaps do not get GC'd
+    bitmap.close();
 
- // bitmaps do not get GC'd
- bitmap.close();
+    const imageData = ctx?.getImageData(0, 0, canvas.width, canvas.height);
 
- const imageData = ctx?.getImageData(0, 0, canvas.width, canvas.height);
-
- return imageData.data
+    return imageData.data
 }
 ```
 

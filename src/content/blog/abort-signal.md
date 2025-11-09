@@ -1,7 +1,6 @@
 ---
 title: How to cancel fetch request using native browser APIs
 publication: 10-11-2024
-reference: https://blog.logrocket.com/axios-vs-fetch-best-http-requests/#response-timeout
 ---
 
 The following code makes a fetch request, but cancels it if it exceeds a 1 second timeout.
@@ -50,4 +49,4 @@ Promise
   });
 ```
 
-It is important to note that `Promise.race` return the first promise that accepts or rejects.
+It is important to note that `Promise.race` return the first promise that accepts or rejects. Read [more](https://blog.logrocket.com/axios-vs-fetch-best-http-requests/#response-timeout).

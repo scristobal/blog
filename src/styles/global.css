@@ -2,6 +2,6 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-sans: 'Iosevka', monospace;
-  --font-mono: 'Iosevka', monospace;
+  --font-sans: "Iosevka", monospace;
+  --font-mono: "Iosevka", monospace;
 }

@@ -1,7 +1,6 @@
 ---
 title: How to sync favicon with user preferred color scheme
 publication: 04-28-2024
-reference: https://github.com/scristobal/unicorn-website/blob/master/public/favicon.svg?short_path=0680eca
 ---
 
 The idea is pretty simple, combine [SVG style tags](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/style) with [CSS @media prefers-color-scheme query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme).
@@ -36,5 +35,8 @@ And don't forget to add a old time ico to support older browsers.
 ```
 
 Using `sizes="any"` makes the browser download only the SVG icon.
+
+Have a look at an [example](https://github.com/scristobal/unicorn-website/blob/master/public/favicon.svg?short_path=0680eca
+).
 
 [How to Favicon in 2024: Six files that fit most needs](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs)

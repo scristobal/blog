@@ -1,7 +1,6 @@
 ---
 title: A use case for reactive programing
 publication: 07-22-2022
-reference: private
 ---
 
 This post shows how [reactive programming](https://reactivex.io/) is used in one of [DataBeacon](https://www.databeacon.aero)’s central software component, called _Funnel_. The post is inspired by the [rubber duck debugging method](https://rubberduckdebugging.com/).

@@ -1,7 +1,6 @@
 ---
   import { getCollection } from "astro:content";
   import type { InferGetStaticPropsType } from "astro";
-  import FormattedDate from "~/components/formatted-date.astro";
   import Layout from "~/layouts/base.astro";
   import "~/styles/anchor-headers.css";
   import Nav from "~/components/nav.astro";
@@ -16,7 +15,7 @@
 
   type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-  const { title, publication } = Astro.props.post.data;
+  const { title } = Astro.props.post.data;
   const { Content } = await Astro.props.post.render();
 ---
 <Layout title={title}>
@@ -24,11 +23,6 @@
     <Nav/>
     <section>
       <h1 class="bg-white dark:bg-black py-2">{title}</h1>
-      <span
-        class="hidden md:inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-900 mx-2 my-1 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400"
-      >
-        <FormattedDate date={publication}/>
-      </span>
       <Content/>
     </section>
     <nav class="flex justify-between bg-white dark:bg-black py-2">

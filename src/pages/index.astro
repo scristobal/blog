@@ -1,6 +1,5 @@
 ---
   import { getCollection } from "astro:content";
-  import FormattedDate from "~/components/formatted-date.astro";
   import Nav from "~/components/nav.astro";
   import { SITE_DESCRIPTION, SITE_TITLE } from "~/consts";
   import Layout from "~/layouts/base.astro";
@@ -13,32 +12,27 @@
   <section class="mx-auto max-w-4xl prose dark:prose-invert">
     <Nav/>
 
-    <p>
-      Hi! I am Samu, welcome to my blog.
-    </p>
+    <p>Hi! I am Samu, welcome to my blog.</p>
 
     <p>
-      A random collection of pieces of code, random thoughts and notes
-      I want to keep handy.<br> Maybe you find some interesting too.
+      A random collection of pieces of code, random thoughts and notes I want to
+      keep handy.
+      <br>
+      Maybe you find some interesting too.
     </p>
 
-    <p>
-      Enjoy!
-    </p>
+    <p>Enjoy!</p>
 
     <ul>
       {
-                posts.map((post) => (
-                    <li>
-                        <a class='hover:text-gray-400' href={`/blog/${post.slug}/`} rel='prefetch'>
-                            <span>{post.data.title}</span>
-                            <span class='hidden md:inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-900 mx-2 my-1 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400'>
-                                <FormattedDate date={post.data.publication} />
-                            </span>
-                        </a>
-                    </li>
-                ))
-            }
+        posts.map((post) => (
+          <li>
+            <a class='hover:text-gray-400' href={`/blog/${post.slug}/`} rel='prefetch'>
+              <span>{post.data.title}</span>
+            </a>
+          </li>
+        ))
+    }
     </ul>
   </section>
 </Layout>
