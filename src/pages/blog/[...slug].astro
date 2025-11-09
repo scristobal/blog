@@ -1,40 +1,40 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '~/layouts/Base.astro';
+  import { getCollection } from "astro:content";
+  import type { InferGetStaticPropsType } from "astro";
 
-import FormattedDate from '~/components/FormattedDate.astro';
-import type { InferGetStaticPropsType } from 'astro';
-import '~/styles/anchor-headers.css';
-import Nav from '~/components/Nav.astro';
+  import FormattedDate from "~/components/formatted-date.astro";
+  import Layout from "~/layouts/base.astro";
+  import "~/styles/anchor-headers.css";
+  import Nav from "~/components/nav.astro";
 
-export async function getStaticPaths() {
-    const posts = await getCollection('blog');
+  export async function getStaticPaths() {
+    const posts = await getCollection("blog");
     return posts.map((post) => ({
-        params: { slug: post.slug },
-        props: post,
+      params: { slug: post.slug },
+      props: post,
     }));
-}
+  }
 
-type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+  type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const post = Astro.props;
-const { Content } = await post.render();
+  const { title, publication } = Astro.props.data;
+  const { Content } = await Astro.props.render();
 ---
-
-<Layout title={post.data.title}>
-    <article class='mx-auto prose dark:prose-invert'>
-        <Nav />
-        <section>
-            <h1 class='bg-white dark:bg-black py-2'>{post.data.title}</h1>
-            <span
-                class='hidden md:inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-900 mx-2 my-1 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400'>
-                <FormattedDate date={post.data.publication} />
-            </span>
-            <Content />
-        </section>
-        <nav class='flex justify-between bg-white dark:bg-black py-2'>
-            <a class='hover:text-gray-400' href='/' class='underline'>&larr; Index</a>
-            <a class='hover:text-gray-400' href='#' class='underline'>Top &uarr;</a>
-        </nav>
-    </article>
+<Layout title={title}>
+  <article class="mx-auto prose dark:prose-invert">
+    <Nav/>
+    <section>
+      <h1 class="bg-white dark:bg-black py-2">{title}</h1>
+      <span
+        class="hidden md:inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-900 mx-2 my-1 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400"
+      >
+        <FormattedDate date={publication}/>
+      </span>
+      <Content/>
+    </section>
+    <nav class="flex justify-between bg-white dark:bg-black py-2">
+      <a class="hover:text-gray-400" href="/" class="underline">&larr; Index</a>
+      <a class="hover:text-gray-400" href="#" class="underline">Top &uarr;</a>
+    </nav>
+  </article>
 </Layout>
