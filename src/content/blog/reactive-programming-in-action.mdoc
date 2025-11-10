@@ -129,9 +129,9 @@ The `attachDataSource` is done in three steps:
 
 2. create the `flight$` observable source, `clientProjection` is basically a `message` filter that uses `clientState` to determine if the message should be forwarded. The signature is
 
-    ```typescript
-    const clientProjection = (serverState: FeedState, clientState: ClientState) => FeedState;
-    ```
+```typescript
+const clientProjection = (serverState: FeedState, clientState: ClientState) => FeedState;
+```
 
 3. finally subscribe the `emitter` observer to the `flight$` observable.
 
