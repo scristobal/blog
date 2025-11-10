@@ -1,5 +1,6 @@
 ---
   import "@fontsource/iosevka";
+  import iosevkaUrl from "@fontsource/iosevka/files/iosevka-latin-400-normal.woff2?url";
   import "~/styles/global.css";
   import { ViewTransitions } from "astro:transitions";
 
@@ -21,6 +22,14 @@
 
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href={iosevkaUrl}
+      crossorigin="anonymous"
+    >
 
     <meta name="generator" content={Astro.generator}>
 
