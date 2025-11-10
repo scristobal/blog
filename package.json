@@ -13,7 +13,7 @@
     "clean": "rm -rf node_modules .astro dist"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.10",
+    "@astrojs/markdoc": "^0.15.8",
     "@astrojs/rss": "^4.0.13",
     "@astrojs/sitemap": "^3.6.0",
     "@fontsource/iosevka": "^5.2.5",
